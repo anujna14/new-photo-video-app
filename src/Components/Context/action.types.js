@@ -1,0 +1,1 @@
+export const SEARCH_PHOTO_VIDEO = "SEARCH_PHOTO_VIDEO";

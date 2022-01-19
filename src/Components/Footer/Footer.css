@@ -1,0 +1,17 @@
+footer {
+  position: fixed;
+  height: 70px;
+  background-color: rgb(238, 235, 235);
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+  z-index: 999;
+  text-align: center;
+}
+footer h1 {
+  padding: 5px 20px;
+  text-align: center;
+}
+footer h1 > span {
+  font-size: 13px;
+}

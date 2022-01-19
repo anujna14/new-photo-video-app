@@ -1,0 +1,44 @@
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.photo-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 10px;
+  position: relative;
+  margin-bottom: 150px;
+}
+.photo-items img {
+  display: block;
+}
+.fill-heart-icon {
+  position: absolute;
+  color: red;
+  font-size: 30px;
+  z-index: 999;
+  margin-left: 250px;
+  margin-top: -300px;
+}
+.photographer-profile {
+  position: absolute;
+  font-size: 30px;
+  color: whitesmoke;
+  z-index: 999;
+  margin-top: -60px;
+  margin-left: 10px;
+}
+
+.photographer-name {
+  font-size: 18px;
+  padding: 12px;
+  text-transform: capitalize;
+}
+
+.display_block {
+  display: none;
+}

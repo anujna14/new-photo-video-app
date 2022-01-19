@@ -1,0 +1,38 @@
+.nav-menu {
+  /* background-color: tomato; */
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-bottom: 2px solid #ccc;
+}
+/* .nav-menu::after {
+  content: "";
+  width: 68%;
+  position: absolute;
+  margin: 0 auto;
+  left: 250px;
+  right: 250px;
+  border-bottom: 1px solid #ccc;
+  display: inline-flex;
+} */
+ul {
+  list-style-type: none;
+}
+li a {
+  text-decoration: none;
+}
+.nav-menu .nav-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.push {
+  margin-left: auto;
+}
+.nav-menu .nav-content li {
+  padding: 10px 30px;
+  font-size: 17px;
+}

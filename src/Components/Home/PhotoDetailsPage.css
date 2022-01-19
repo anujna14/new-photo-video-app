@@ -1,0 +1,27 @@
+.photo-details {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.photo-details img {
+  position: relative;
+}
+
+.photo-details-text {
+  position: absolute;
+  left: 420px;
+  top: 120px;
+  padding: 20px;
+}
+.photo-details-text h1 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+@media (max-width: 1400px) {
+  .photo-details-text {
+    left: 120px;
+  }
+}
