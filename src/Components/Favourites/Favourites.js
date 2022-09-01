@@ -1,19 +1,40 @@
-import React, { useContext } from "react";
-import { FavouriteContext } from "../Context/FavouriteContext/FavouriteContext";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
+import Modal from "../UI/Modal";
+import { FavouriteContext } from "../Context/FavouriteContext/FavouriteContext";
 
 const Favourites = () => {
-  const { favouriteitems } = useContext(FavouriteContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const history = useHistory();
 
-  console.log("favouriteitems", favouriteitems);
+  const favCtx = useContext(FavouriteContext);
+
+  console.log(favCtx.favourites)
+  useEffect(() => {
+    if (favCtx.favourites.length === 0) {
+      setIsModalOpen(true);
+    }
+  }, [favCtx.favourites]);
+
+  const handleOnClose = () => {
+    setIsModalOpen(false);
+    history.replace("/");
+  };
+
+  const handleFavIcon = (itemId) => {
+    const isFavourite = favCtx.isFav(itemId);
+    if (isFavourite) {
+      favCtx.removeFav(itemId);
+    }
+  }; 
   return (
     <div>
-      {favouriteitems.favourites.length > 0 ? (
+      {!isModalOpen ? (
         <div className="container">
           <div className="photo-items">
-            {favouriteitems.favourites.map((fav_item) =>
+            {favCtx.favourites.map((fav_item) =>
               !fav_item.image ? (
                 <div key={fav_item.id} className="photo-item">
                   <Link
@@ -32,7 +53,10 @@ const Favourites = () => {
                       }}
                     />
                   </Link>
-                  <span className="fill-heart-icon">
+                  <span
+                    className="fill-heart-icon"
+                    onClick={() => handleFavIcon(fav_item.id)}
+                  >
                     {
                       <span>
                         <AiFillHeart />
@@ -50,7 +74,7 @@ const Favourites = () => {
                   </span>
                 </div>
               ) : (
-                <div key={fav_item.id} className="photo-item">
+                <div key={fav_item.id} className="video-item">
                   <Link
                     onClick={() => {
                       window.location.href = `/videos/${fav_item.id}`;
@@ -70,20 +94,20 @@ const Favourites = () => {
                       />
                     </video>
                   </Link>
-                  {/* <span className="fill-heart-icon">
+                  <span className="fill-heart-icon">
                     {
                       <span>
                         <AiFillHeart />
                       </span>
                     }
-                  </span> */}
+                  </span>{" "}
                   <span
                     onClick={() => window.open(`${fav_item.url}`, "_blank")}
                     className="photographer-profile"
                   >
-                    {/* <CgProfile /> */}
+                    <CgProfile />
                     <span className="photographer-name">
-                      {fav_item.photographer}
+                      {fav_item.user.name}
                     </span>
                   </span>
                 </div>
@@ -93,7 +117,9 @@ const Favourites = () => {
         </div>
       ) : (
         <div className="container text-center">
-          <h1>No Fav to display</h1>
+          <Modal onClose={handleOnClose}>
+            No Favourites to display! Would you like to add some?
+          </Modal>
         </div>
       )}
     </div>

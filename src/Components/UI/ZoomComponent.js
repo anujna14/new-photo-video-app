@@ -9,8 +9,8 @@ const ZoomComponent = ({ photoDetails }) => {
       initialScale={1}
       minScale={1}
       maxScale={7}
-      initialPositionX={200}
-      initialPositionY={100}
+      initialPositionX={0}
+      initialPositionY={0}
     >
       {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
         <React.Fragment>

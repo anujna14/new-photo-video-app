@@ -1,0 +1,17 @@
+.video-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.video-details span {
+  font-weight: bold;
+}
+.video-details a {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}

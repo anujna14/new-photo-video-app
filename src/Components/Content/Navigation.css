@@ -20,6 +20,7 @@ ul {
 }
 li a {
   text-decoration: none;
+  font-weight: bold;
 }
 .nav-menu .nav-content {
   display: flex;
@@ -35,4 +36,11 @@ li a {
 .nav-menu .nav-content li {
   padding: 10px 30px;
   font-size: 17px;
+}
+
+li a:hover{
+  color: red;
+}
+li a:visited{
+  color: Black;
 }

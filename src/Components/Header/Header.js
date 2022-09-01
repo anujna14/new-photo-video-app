@@ -44,9 +44,9 @@ const Header = () => {
             <img
               style={{
                 weidth: "100%",
-                height: "300px",
+                height: "400px",
                 maxWidth: "100%",
-                objectFit: "fill",
+                objectFit: "cover",
               }}
               className="image-stylr d-block w-100 container-fluid"
               src={item.src.landscape}

@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,} from "react";
 import axios from "axios";
 import DetailsPageHeader from "../Header/DetailsPageHeader";
 import "./PhotoDetailsPage.css";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { AiOutlineZoomIn, AiOutlineZoomOut } from "react-icons/ai";
 import ZoomComponent from "../UI/ZoomComponent";
 
 const PhotoDetailsPage = (props) => {
   const [photoDetails, setPhotoDetails] = useState({});
-  console.log("MATCH:", props.match.params.id);
 
   const test_url =
     "https://jsonware.com/api/v1/json/a32151e4-d771-461b-bf4a-93ac3f81db34?dynamic=true";
@@ -24,7 +21,6 @@ const PhotoDetailsPage = (props) => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         setPhotoDetails(response.data);
       })
       .catch((err) => {
@@ -34,7 +30,6 @@ const PhotoDetailsPage = (props) => {
 
   useEffect(() => {
     getPhotoDetails();
-    console.log("PHOTO DETAILS", photoDetails);
   }, []);
   return (
     <>

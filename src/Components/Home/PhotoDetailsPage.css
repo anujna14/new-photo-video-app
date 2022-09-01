@@ -5,14 +5,12 @@
   margin: 0 auto;
 }
 
-.photo-details img {
-  position: relative;
-}
 
 .photo-details-text {
+  max-width: 50%;
   position: absolute;
-  left: 420px;
   top: 120px;
+  left: 300px;
   padding: 20px;
 }
 .photo-details-text h1 {

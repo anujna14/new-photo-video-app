@@ -5,6 +5,7 @@
 }
 
 .zoom-btn button {
+  position: fixed;
   width: 60px;
   font-size: 30px;
   border: none;

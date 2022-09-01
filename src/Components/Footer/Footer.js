@@ -8,7 +8,7 @@ const Footer = () => {
         <span>
           <AiOutlineCopyrightCircle />
         </span>
-        <span> Robosoft Technologies 1996-2021</span>
+        <span> Robosoft Technologies 1996-2022</span>
       </h1>
     </footer>
   );
