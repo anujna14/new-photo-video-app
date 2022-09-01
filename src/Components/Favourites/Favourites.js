@@ -94,7 +94,7 @@ const Favourites = () => {
                       />
                     </video>
                   </Link>
-                  <span className="fill-heart-icon">
+                  <span className="fill-heart-icon" onClick={() => handleFavIcon(fav_item.id)}>
                     {
                       <span>
                         <AiFillHeart />
